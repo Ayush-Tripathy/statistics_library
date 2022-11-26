@@ -3,6 +3,7 @@
  * Title : Statistics Library
  * Course : Programming in C
  * Faculty: Prof. Chandan Misra
+ * Group Number : 10
  * Group Members :
  *      1. Ayush Tripathy (UCSE22011)
  *      2. R Pawan Kumar Reddy (UCSE22027)
