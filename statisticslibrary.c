@@ -22,6 +22,72 @@
 // statisticslibary header-file
 #include "statisticslibary.h"
 
+// driver function
+void main()
+{
+    int choice, size_u, size_g;
+    double num_f;
+    
+    // menu
+    printf("Enter\n");
+    printf("1 - Ungrouped Data\n");
+    printf("2 - Grouped Data\n");
+    scanf("%d", &choice);
+
+    if (choice == 1)
+    {
+        printf("\nUngrouped Data \n");
+        
+        // input for ungrouped data
+        printf("Enter size of array: ");
+        scanf("%d", &size_u);
+        double arr[size_u];
+        printf("Enter the numbers: \n");
+        for (int i = 0; i < size_u; i++)
+        {
+            scanf("%lf", &arr[i]);
+        }
+        
+        // output for ungrouped data
+        printf("Mean: %f\n", ungrouped_mean(arr, size_u));
+        printf("Median: %f\n", ungrouped_median(arr, size_u));
+        printf("Mode: %f\n", ungrouped_mode(arr, size_u));
+        printf("Max: %f\n", max(arr, size_u));
+        printf("Min: %f\n", min(arr, size_u));
+        printf("Variance (Pupulation): %f\n", variance(arr, size_u, true));
+        printf("Standard deviation (Pupulation): %f\n", standard_deviation(arr, size_u, true));
+        printf("Variance (Sample): %f\n", variance(arr, size_u, false));
+        printf("Standard deviation (Sample): %f\n\n", standard_deviation(arr, size_u, false));
+
+        printf("Enter any number to find frequency: ");
+        scanf("%lf", &num_f);
+        printf("Frequency of %lf: %d\n", num_f, frequency(num_f, arr, size_u));
+    }
+    else if (choice == 2)
+    {
+        printf("\n\nGrouped Data \n");
+        
+        // input for grouped data
+        printf("Enter the no. of classes: ");
+        scanf("%d", &size_g);
+        group gd[size_g];
+        printf("Enter Data as [lowerlimit upperlimit frequency]\n");
+        for (int i = 0; i < size_g; i++)
+        {
+            scanf("%lf %lf %lf", &gd[i].lower_limit, &gd[i].upper_limit, &gd[i].frequency);
+        }
+        
+        // output for grouped data
+        printf("Grouped_Mean: %f\n", grouped_mean(gd, size_g));
+        printf("Grouped_Median: %f\n", grouped_median(gd, size_g));
+        printf("Grouped_Mode: %f\n", grouped_mode(gd, size_g));
+    }
+    else
+    {
+        printf("Invalid Choice.\n");
+    }
+}
+
 double ungrouped_mean(double numbers[], int size)
 {
     // variable 'sum' to store the sum of all elements in array
