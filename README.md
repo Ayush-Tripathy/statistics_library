@@ -1,2 +1,2 @@
-# statistics_library
+# Statistics Library
 1st Semester Project
